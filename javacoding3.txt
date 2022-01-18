@@ -1,0 +1,229 @@
+
+1)Write your own program using arithmatick operators.
+
+package arithmatic; //package
+//main class
+public class Arthmatic {
+//different methods
+	public int add(int a, int b) {
+		int c = a+b;
+		return c;
+	}
+	public int sub(int a, int b) {
+		int c = a-b;
+		return c;
+	}
+	public int mul(int a, int b) {
+		int c = a*b;
+		return c;
+	}
+	public int div(int a, int b) {
+		int c = a/b;
+	    return c;
+	}
+	public int mod(int a, int b) {
+	   int c = a%b;
+	   return c;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ 		//creating objects to call above methods
+		Arthmatic a1=new Arthmatic();
+		System.out.println(a1.add(12,10));
+		System.out.println(a1.sub(20,10));
+		System.out.println(a1.mul(10,10));
+		System.out.println(a1.div(12,3));
+		System.out.println(a1.mod(99,10));
+	}
+
+}
+output:
+22
+10
+100
+4
+9
+2) Write your own program using arithmatick assignment operators.
+
+package asignmentop; //package
+//main class
+public class Assignment {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//declaring and initializing an variables in main class 
+ 		int a=13;
+		a+=10;
+		int b=45;
+		b-=20;
+		float c=24f;
+		c*=2;
+		float d=25f;
+		d/=5;
+		float e=26f;
+		e%=5;
+		//printing all the variables directly
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+		System.out.println(e);
+	}
+
+}
+output:
+23
+25
+48.0
+5.0
+1.0
+
+
+
+
+3) Write your own program using Relational operators.
+
+package realationalop; //package
+//creating main class and declaring and initializing an variable in same class
+public class Relational {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       int a=12;
+       int b=76;
+       System.out.println(a>b);
+       System.out.println(a<b);    //printing the operation
+       System.out.println(a>=b);
+       System.out.println(a<=b);
+       System.out.println(a!=b);
+	}
+
+}
+output:
+false
+true
+false
+true
+true
+
+
+
+4) Write your own program using Logical operators.
+
+package logicalop;
+
+public class Logical {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a=34;
+		int b=68;
+		System.out.println(a>b&a<=b);
+		System.out.println(a>b|a<=b);
+		System.out.println(!(a>=b));	
+	}
+
+}
+output:
+false
+true
+true
+
+5) Write your own program using to show the use of assignment operators.
+
+package assignmentop1;
+
+public class Asignment {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a=45,b=24;
+		System.out.println("value of a is= "+a);
+		System.out.println(a==b);
+	}
+
+}
+output:
+value of a is= 45
+false
+6) Write a program to check age of student is greater than 18.
+
+package agechecking;
+
+public class Age {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int age=19;
+		System.out.println(age>18);
+	}
+
+}
+output:
+true
+
+7) Write a program to check number is even or odd.
+
+package evenorodd;
+
+public class Testing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a=16;
+		boolean	b;
+		b=(a%2==0);
+		System.out.println("number is even= "+b);
+		b=(a%2==1);
+		System.out.println("number is odd= "+b);
+	}
+
+}
+output:
+number is even= true
+number is odd= false
+8) Write a program to check whether the number is greater than 100 and 200.
+
+package greater;
+
+public class Greater {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a=150;
+		boolean  b=a>100;
+		System.out.println("A is greater than 100: "+b);
+		boolean c=a<100;
+		System.out.println("A is smaller than 100: "+c);
+		boolean d=a>200;
+		System.out.println("A is greater than 200: "+d);
+		boolean e=a<200;
+		System.out.println("A is smaller than 200: "+e);
+}
+}
+output:
+A is greater than 100: true
+A is smaller than 100: false
+A is greater than 200: false
+A is smaller than 200: true
+9) Write a program to check whether both the numbers are same or not .
+
+package checkingnumberissameornot;
+
+public class Check {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a=80,b=90;
+		boolean c=(a==b);
+		System.out.println("number is same: "+c);
+		boolean d=!(a==b);
+		System.out.println("number is not same: "+d);
+	}
+
+}
+output:
+number is same: false
+number is not same: true
+
+
