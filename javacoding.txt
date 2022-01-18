@@ -1,0 +1,217 @@
+
+1)Write a program to print the following o/p the Same format by taking two string variables
+Hello
+Hello Hello
+     Welcome Welcome
+public class Message {    //creating class
+	public static void display(String str)   //creating 2 functions inside the class
+	{
+		System.out.println(str);
+	}
+public static void display1(String word)
+{
+	System.out.println(word);
+}
+	public static void main(String[] args) {    
+		// TODO Auto-generated method stub
+       display("Hello");      //accessing above functions and passing some values to it 
+       display("Hello"+" "+"Hello");
+       display1("     Welcome"+" "+"Welcome");
+	}
+
+}
+output:
+Hello
+Hello Hello
+     Welcome Welcome
+
+2) write a program to print “ welcome to java programing” by using the static method without arguments and return type.
+
+public class Welcome {    //creating main class
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       System.out.println("welcome to java programing"); //printing msg 
+	}
+
+}
+output:
+
+welcome to java programing
+3)Write a static method add() which takes the 3 int arguments and returns the summation of those numbers as int and print the result.
+
+public class Summation {  //creating main class
+    public static int add(int a,int b,int c) //creating methods to do some operation
+    {
+    	int d=a+b+c;
+    	return d;
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//displaying msg by passing the values to method
+     System.out.println("Summation of a three number is= "+add(2,4,6));
+	}
+
+}
+output:
+Summation of a three number is= 12
+
+4)Write a static method avg() which takes 3 double values and return the result as double.
+ 
+public class Average { //creating main class
+//creating methods to do some operation
+	public static double avg(double a,double b,double c)
+    {
+    	double d=(a+b+c)/3;
+    	return d;
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//displaying msg by passing the values to method
+
+		System.out.println("Average of a three number is= "+avg(2,4,6));
+	}
+
+}
+output:
+Average of a three number is= 4.0
+
+
+5)Write a program to create a employee class with member variables empId,empName,empSalary,empDesg.and create 3 objects and read and print their values.
+
+public class Employe { //creating main class
+
+    int empId;
+    String empName;
+    float empSalary;
+    String empDesg;
+    public void read1()  //creating methods
+    {
+    	 empId=101;
+        empName="BOB";
+        empSalary=25000f;
+        empDesg="Clerk";	
+    }
+    public void read2()
+    {
+    	 empId=102;
+        empName="RICK";
+        empSalary=20000f;
+        empDesg="Assistant";	
+    }
+    public void read3()
+    {
+    	 empId=103;
+        empName="RON";
+        empSalary=30000f;
+        empDesg="Manager";	
+    }
+    public void print1() //displaying msg 
+    {
+    System.out.println(empId+"  "+empName+"  "+empSalary+"  "+empDesg);		
+    }
+    public void print2()
+    {
+    System.out.println(empId+"  "+empName+"  "+empSalary+"  "+empDesg);		
+    }
+    public void print3()
+    {
+    System.out.println(empId+"  "+empName+"  "+empSalary+"  "+empDesg);		
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     Employe e1=new Employe(); //object creation
+     e1.read1();     //calling an above methods by an objects
+     e1.print1();
+     Employe e2=new Employe();
+     e2.read2();
+     e2.print2();
+     Employe e3=new Employe();
+     e3.read3();
+     e3.print3();
+	}
+
+}
+output:
+101  BOB  25000.0  Clerk
+102  RICK 20000.0  Assistant
+103  RON  30000.0  Manager
+
+5) Write a program to create a employee class with member variables empId,empName,empSalary,empDesg.and create 3 objects and read and print their values.
+
+public class Employe {
+    int empId;
+    String empName;
+    float empSalary;
+    String empDesg;
+    public void read()
+    {
+    	empId=101;
+        empName="BOB";
+        empSalary=25000f;
+        empDesg="Clerk";	
+    }
+    public void print()
+    {
+    System.out.println(empId+"  "+empName+"  "+empSalary+"  "+empDesg);		
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     Employe e1=new Employe();
+     e1.read();
+     e1.print();
+     Employe e2=new Employe();
+     e2.read();
+     e2.print();
+     Employe e3=new Employe();
+     e3.read();
+     e3.print();
+	}
+
+}
+output:
+101  BOB  25000.0  Clerk
+101  BOB  25000.0  Clerk
+101  BOB  25000.0  Clerk
+
+6)write a program to create a account class with amount as member and write 3 functions deposite, withdraw, and checkbalaence.
+
+public class Account {   //creating main class
+int ammount;
+int a;
+int b;
+int c;
+public void deposite()  //creating metods
+{
+	ammount=30000;
+	a=ammount+10000;
+	System.out.println("Deposite= "+a);
+}
+public void withdraw()
+{
+  b=a-20000;
+  System.out.println("withdraw= "+b);
+}
+public void checkbalance()
+{
+	 c=b;
+	 System.out.println("checkbalance= "+c);
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     Account a1=new Account();  //creating object
+     a1.deposite();           //calling the above methods using objects
+     a1.withdraw();
+     a1.checkbalance();
+	}
+
+}
+
+output:
+Deposite= 40000
+withdraw= 20000
+checkbalance= 20000
+
+
+
+
