@@ -1,0 +1,486 @@
+
+1) Write a program to print a numbers from 1 to 10.
+
+package printnumber;
+
+public class PrintNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for(int i=1;i<=10;i++)
+		{
+      System.out.println(i);
+	}
+	}
+}
+output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+2)Write a program to calculate the sum of first 10 natural number.
+
+package sumof;
+
+public class SumOf {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int sum=0;
+		for(int i=1;i<=10;i++)
+		{
+			sum=sum+i;
+			System.out.print(i+"+");
+		}
+		
+		System.out.print("= "+sum);
+	}
+
+}
+output:
+1+2+3+4+5+6+7+8+9+10= 55
+
+3)Write a program that prompts the user to input a positive integer. It should then print the multiplication table of that number. 
+
+package table;
+import java.util.Scanner; 
+public class Table {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a;
+		System.out.println("Enter the positive integer");
+		Scanner s1=new Scanner(System.in);
+		a=s1.nextInt();
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(a+"*"+i+"= "+a*i);
+		}
+	}
+
+}
+output:
+Enter the positive integer
+4
+4*1= 4
+4*2= 8
+4*3= 12
+4*4= 16
+4*5= 20
+4*6= 24
+4*7= 28
+4*8= 32
+4*9= 36
+4*10= 40
+
+4) Write a program to find the factorial value of any number entered through the keyboard. 
+
+package factorial;
+import java.util.Scanner; 
+public class Factorial {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n;
+		System.out.println("Enter the Number");
+		Scanner s1=new Scanner(System.in);
+		n=s1.nextInt();
+		int i=1;
+		while(n>0)
+		{
+		i=i*n;
+		n--;
+		}System.out.println("Factorial of given number is= "+i);
+		}
+
+}
+output:
+Enter the Number
+7
+Factorial of given number is= 5040
+
+5)Two numbers are entered through the keyboard. Write a program to find the value of one number raised to the power of another. (Do not use Java built-in method)
+package power;
+import java.util.Scanner; 
+public class Power {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a;
+		System.out.println("Enter the value of a");
+		Scanner s1=new Scanner(System.in);
+		a=s1.nextInt();
+		int b;
+		System.out.println("Enter the value of b");
+		Scanner s2=new Scanner(System.in);
+		b=s2.nextInt();
+		int d=a;
+		int c=b;
+		while(c>1)
+		{
+		d=d*a;
+		
+		c--;
+		
+		}
+		System.out.println(d);
+		}
+
+}
+output:
+Enter the value of a
+3
+Enter the value of b
+4
+81
+6)Write a program that prompts the user to input an integer and then outputs the number with the digits reversed. For example, if the input is 12345, the output should be 54321.
+
+package reverse;
+import java.util.Scanner; 
+public class Reverse {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i,rev=0;
+		System.out.println("Enter the Number");
+		Scanner s1=new Scanner(System.in);
+		i=s1.nextInt();
+		while(i!=0)
+		{
+			int a=i%10;
+			rev=rev*10+a;
+			i/=10;
+		}
+		System.out.println(rev);
+	}
+
+}
+output:
+Enter the Number
+12345
+54321
+
+7)Write a program that reads a set of integers, and then prints the sum of the even and odd integers.
+
+package evenoddsum;
+import java.util.Scanner; 
+public class EvenOdd {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int j=0,k=0,num;
+		char ch;
+		Scanner s1=new Scanner(System.in);
+		do {
+			System.out.println("Enter the Number");
+			num=s1.nextInt();
+		if(num%2==0)
+		{
+		 j=j+num;
+		}
+		 else
+		 {
+			k=k+num; 
+		}
+		System.out.println("Do ypu want to continue y/n ?");
+		ch=s1.next().charAt(0);
+		}while(ch=='y'||ch=='Y');
+		System.out.println("even sum is= "+j);
+		System.out.println("odd sum is= "+k);
+	}
+
+}
+output:
+Enter the Number
+12
+Do ypu want to continue y/n ?
+y
+Enter the Number
+35
+Do ypu want to continue y/n ?
+y
+Enter the Number
+24
+Do ypu want to continue y/n ?
+y
+Enter the Number
+17
+Do ypu want to continue y/n ?
+y
+Enter the Number
+2
+Do ypu want to continue y/n ?
+n
+even sum is= 38
+odd sum is= 52
+
+8)Write a program that prompts the user to input a positive integer. It should then output a message indicating whether the number is a prime number. 
+
+package primenumber;
+
+import java.util.Scanner;
+
+public class Prime {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n,i,count=0;
+		System.out.println("enter the number");
+		Scanner s1=new Scanner(System.in);
+		n=s1.nextInt();
+		for(i=1;i<=n;i++)
+		{
+			if(n%i==0)
+			{
+				count++;
+			}
+		}
+		if(count==2)
+		{
+			System.out.println(n+" is prime number");
+		}
+		else
+		{
+			System.out.println(n+" is not a prime number");
+		}
+	}
+
+}
+1)output:
+enter the number
+7
+7 is prime number
+2)output:
+enter the number
+6
+6 is not a prime number
+
+9)Write a program to calculate HCF of Two given number.
+
+package hcfofnumber;
+
+import java.util.Scanner;
+
+public class Hcf {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a,b,hcf;                            // a=12 ,b=15,
+		System.out.println("enter the number");
+		Scanner s1=new Scanner(System.in);
+		a=s1.nextInt();
+		b=s1.nextInt();
+		if(a>b)  // 12>15  condition false
+		{
+			hcf=a;     
+		}
+		else
+		{
+			hcf=b;    //hcf=15
+		}
+		for(int hcf1=hcf;hcf1<=hcf;hcf1--) // for(hcf1=15; 15<=15;  ) 
+		{
+			if(a%hcf1==0 && b%hcf1==0) // 12%15==0 & 15%15==0 (if both are true then print the msg or loop continues
+			{
+				System.out.println("hcf of "+a+ " and "+b+" is: "+hcf1);
+				break;
+			} //hcf--=15--=14 
+		}
+	}
+
+}
+output:
+enter the number
+12
+15
+hcf of 12 and 15 is: 3
+
+10)Write a do-while loop that asks the user to enter two numbers. The numbers should be added and the sum displayed. The loop should ask the user whether he or she wishes to perform the operation again. If so, the loop should repeat; otherwise it should terminate. 
+package printsum;
+
+import java.util.Scanner;
+
+public class PrintSum {
+		    public static void main(String[] args)
+		    {
+		        Scanner s1 = new Scanner(System.in);
+		        int num1, num2;
+		        char ch;
+		        do
+		        {
+		            System.out.print("Enter the first number ");
+		            num1 = s1.nextInt();
+		          
+		            System.out.print("Enter the second number ");
+		            num2 = s1.nextInt();
+		            
+		            System.out.println("Sum of numbers: " +(num1+num2));
+		        
+		            System.out.print("Do you want to continue y/n? ");
+		            ch = s1.next().charAt(0);
+		            
+		            System.out.println();
+		            
+		        }while(ch=='y' || ch == 'Y');
+	  }  
+}
+output:
+Enter the first number 12
+Enter the second number 12
+Sum of numbers: 24
+Do you want to continue y/n? y
+
+Enter the first number 25
+Enter the second number 10
+Sum of numbers: 35
+Do you want to continue y/n? n
+n
+
+11)Write a program to enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros entered. 
+
+package posnegzero;
+
+import java.util.Scanner;
+
+public class print {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n,count1=0,count2=0,count3=0;
+		char ch;
+		do
+		{
+		System.out.println("enter the number");
+		Scanner s1=new Scanner(System.in);
+		n=s1.nextInt();
+		if(n>0)
+		{
+			count1++;
+			
+		}
+		if(n<0)
+		{
+			count2++;
+			
+		}
+		if(n==0)
+		{
+			count3++;
+			
+		}
+		System.out.print("Do you want to continue y/n? ");
+        ch = s1.next().charAt(0);
+        
+        System.out.println();
+        
+    }while(ch=='y' || ch == 'Y');
+	System.out.println("positive count= "+count1);
+	System.out.println("negative count= "+count2);
+	System.out.println("zero count= "+count3);
+	}
+}
+output:
+enter the number
+34
+Do you want to continue y/n? y
+
+enter the number
+-45
+Do you want to continue y/n? y
+
+enter the number
+0
+Do you want to continue y/n? y
+
+enter the number
+23
+Do you want to continue y/n? y
+
+enter the number
+-14
+Do you want to continue y/n? y
+
+enter the number
+0
+Do you want to continue y/n? y
+
+enter the number
+-35
+Do you want to continue y/n? n
+
+positive count= 2
+negative count= 3
+zero count= 2
+
+12)Write a program to enter the numbers till the user wants and at the end the program should display the largest and smallest numbers entered.
+
+package largesmall;
+
+import java.util.Scanner;
+
+public class print {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n,count=1;
+		char ch;
+		int max=0;
+		int min=0;
+		Scanner s1=new Scanner(System.in);
+		do
+		{
+		System.out.println("enter the number");
+		n=s1.nextInt();
+		if(count==1)
+		{
+			min=max=n;
+		}	
+		if(n>max)
+		{
+			max=n;
+		}
+		if(n<min)
+		{
+			min=n;
+		}
+		System.out.print("Do you want to continue y/n? ");
+        ch = s1.next().charAt(0);
+        count=0;
+        System.out.println();
+        
+    }while(ch=='y' || ch == 'Y');
+		System.out.println("large number= "+max);
+		System.out.println("small number= "+min);
+	}
+
+}
+output:
+enter the number
+12
+Do you want to continue y/n? y
+
+enter the number
+34
+Do you want to continue y/n? y
+
+enter the number
+78
+Do you want to continue y/n? y
+
+enter the number
+50
+Do you want to continue y/n? y
+
+enter the number
+39
+Do you want to continue y/n? n
+
+large number= 78
+small number= 12
+
