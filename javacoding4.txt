@@ -1,0 +1,404 @@
+
+1) Peter wants to display the following menu when the Hangman game starts :
+Play Game
+View instructions
+Exit Game
+There after, he wants a user to enter a choice, such as 1,2 or 3. In addition, he wants the respective methods,
+playGame(), instructGame(), exitGame(), to be invoked according to the user’s input, 1,2 or 3. Respectively. Help peter to achieve the preceding requirement.
+
+package hangmangame;  //Package creation
+import java.util.Scanner; //importing Scanner method 
+public class HangmanGame { //HangmanGame class creation
+	public void playGame() //method playGame
+	{
+		System.out.println("Play");
+	}
+	public void instructGame()//method instructGame
+	{
+		System.out.println("   Music");   
+		System.out.println("ON      Off");
+	}
+	public void exitGame() //method exitGame for exit a game
+	{
+		System.out.println("Exit");
+	}
+	public static void main(String[] args) {  //main method for accessing above all methods 
+		// TODO Auto-generated method stub    
+		int a;                 //variable for choice in switch case
+		HangmanGame o1=new HangmanGame();  //object creation for accessing methods
+		System.out.println("Enter your first choice");
+		Scanner s1=new Scanner(System.in);//for user to give inputs
+		a=s1.nextInt(); //nextInt() which will internally works and takes the value of a here we didn't initialized so it goes to switch case
+		switch(a)        
+		{
+		case 1:o1.playGame(); //these methods prints what is inside these methods
+		       break;
+		case 2:o1.instructGame();       
+			   break;
+		case 3:o1.exitGame();       
+		       break;	   
+		}
+	}
+
+}
+output:
+Enter your choice
+1
+Play
+Enter your first choice
+2
+   Music
+ON      Off
+Enter your choice
+3
+Exit
+
+1) Write program to find whether a given year is leap year or not.
+
+package leapyear;
+import java.util.Scanner;
+public class LeapYear {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      int year;
+      System.out.println("Enter the year: ");
+      Scanner s1=new Scanner(System.in);
+      year=s1.nextInt();
+      if(year%4==0)
+      {
+    	  System.out.println("Leap year");  
+      }
+      else
+      {
+    	  System.out.println("Not a leap year ");
+      }
+	}
+
+}
+output:
+Enter the year: 
+2020
+Leap year
+Enter the year
+2021
+Not a leap year
+
+2) program to read roll no, name and marks of three subjects and calculate the total, percentage and division 
+Test Data :
+Input the Roll Number of the student :784
+Input the Name of the Student :James
+Input the marks of Physics, Chemistry and Computer Application : 70 80 90
+Expected Output :
+Roll No : 784
+Name of Student : James
+Marks in Physics : 70
+Marks in Chemistry : 80
+Marks in Computer Application : 90
+Total Marks = 240
+Percentage = 80.00
+Division = First
+
+package student;
+import java.util.Scanner;
+public class StudentMark {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int RollNo;
+		System.out.println("Enter the roll number: ");
+		Scanner s1=new Scanner(System.in);
+	    RollNo=s1.nextInt();
+	    System.out.println("Roll number: "+RollNo);
+	    String Name;
+	    System.out.println("Enter the name: ");
+		Scanner s2=new Scanner(System.in);
+		Name=s2.next();
+		System.out.println("The name: "+Name);
+		int M1;
+		System.out.println("Enter the marks in physics: ");
+		Scanner s3=new Scanner(System.in);
+	    M1=s3.nextInt();
+	    System.out.println("The marks in physics: "+M1);
+	    int M2;
+		System.out.println("Enter the marks in chemistry: ");
+		Scanner s4=new Scanner(System.in);
+	    M2=s4.nextInt();
+	    System.out.println("The marks in chemistry: "+M2);
+	    int M3;
+		System.out.println("Enter the marks in C.S: ");
+		Scanner s5=new Scanner(System.in);
+	    M3=s5.nextInt();
+	    System.out.println("The marks in C.S: "+M3);
+	    int total=(M1+M2+M3);
+	    System.out.println("The total marks: "+total);
+	    float percentage=(M1+M2+M3)*0.333f;
+	    System.out.println("The total percentage: "+percentage);
+	    if(percentage>=80)
+	    {
+	    	System.out.println("First class");
+	    }
+	    else if(percentage>=60)
+	    {
+	    	System.out.println("Second class");
+	    }
+	    else if(percentage>=35)
+	    {
+	    	System.out.println("third class");
+	    }
+	    else
+	    {
+	    	System.out.println("fail");
+	    }
+	}
+
+}
+output:
+1)Enter the roll number: 
+784
+Roll number: 784
+Enter the name: 
+james
+The name: james
+Enter the marks in physics: 
+70
+The marks in physics: 70
+Enter the marks in chemistry: 
+80
+The marks in chemistry: 80
+Enter the marks in C.S: 
+90
+The marks in C.S: 90
+The total marks: 240
+The total percentage: 79.92
+Second class
+2)
+Enter the roll number: 
+100
+Roll number: 100
+Enter the name: 
+james
+The name: james
+Enter the marks in physics: 
+28
+The marks in physics: 28
+Enter the marks in chemistry: 
+30
+The marks in chemistry: 30
+Enter the marks in C.S: 
+23
+The marks in C.S: 23
+The total marks: 81
+The total percentage: 26.973
+fail
+3) program to read temperature in centigrade and display a suitable message
+
+package temperature;
+
+import java.util.Scanner;
+
+public class Temperature {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      int temp;
+      System.out.println("Enter the temperature: ");
+	  Scanner s1=new Scanner(System.in);
+	  temp=s1.nextInt();
+	  if(temp>=30)
+	  {
+		  System.out.println("HOT");  
+	  }
+	  else
+	  {
+		  System.out.println("COLD");
+	  }
+	}
+
+}
+output:
+Enter the temperature: 
+45
+HOT
+Enter the temperature: 
+-7
+COLD
+4) program to check whether a character is an alphabet, digit or special character.
+
+package charector;
+import java.util.Scanner;
+public class Charector {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     char ch;
+     System.out.println("enter the charector: ");
+	 Scanner s1=new Scanner(System.in);
+	 ch=s1.next().charAt(0);
+	 if(ch>='a'&&ch<='z'||ch>='A'&&ch<='Z')
+	 {
+		 System.out.println("Charector is an alphabet"); 
+	 }
+	 else if(ch>='0'&&ch<='9')
+	 {
+		 System.out.println("Charector is a digit"); 
+	 }
+	 else if(ch=='!'||ch=='@'||ch=='#'||ch=='$'||ch=='%'||ch=='^'||ch=='&'||ch=='*')
+	 {
+		 System.out.println("Charector is a special charector"); 
+	 }
+       else
+	 {
+		 System.out.println("invalid"); 
+	 }
+	}
+
+}
+output:
+1)enter the charector: 
+a
+Charector is an alphabet
+2)
+enter the charector: 
+3
+Charector is a digit
+3)
+enter the charector: 
+^
+Charector is a special charector
+
+5) Write a program in to accept a grade and declare the equivalent description  
+Grade	Description
+E	Excellent
+V	Very Good
+G	Good
+A	Average
+F	Fail
+Test Data :
+Input the grade :A
+Expected Output :
+You have chosen : Average
+
+package grade;
+import java.util.Scanner;
+public class Grade {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char ch;
+		System.out.println("enter the charector: ");
+		Scanner s1=new Scanner(System.in);
+		ch=s1.next().charAt(0);
+		switch(ch)
+		{
+		case 'E':System.out.println("Exelent");
+		         break;
+		case 'V':System.out.println("Very Good");
+         		 break;
+		case 'G':System.out.println("Good");
+        		 break;
+		case 'A':System.out.println("Average");
+                 break;
+		case 'F':System.out.println("Fail");
+                 break;
+		default:System.out.println("invalid");
+		}
+	}
+
+}
+output:
+enter the charector: 
+A
+Average
+6) Write a program to read any day number in integer and display day name in the word.
+
+package day;
+import java.util.Scanner;
+public class Day {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a;
+		System.out.println("enter the choice: ");
+		Scanner s1=new Scanner(System.in);
+		a=s1.nextInt();
+		switch(a)
+		{
+		case 1:System.out.println("MONDAY");
+		         break;
+		case 2:System.out.println("TUESDAY");
+         		 break;
+		case 3:System.out.println("WEDNESDAY");
+        		 break;
+		case 4:System.out.println("THURSDAY");
+                 break;
+		case 5:System.out.println("FRIDAY");
+                 break;
+		case 6:System.out.println("SATURDAY");
+                 break;
+		case 7:System.out.println("SUNDAY");
+                 break;
+              default:System.out.println("invalid");
+		}
+	}
+
+}
+output:
+enter the choice: 
+5
+FRIDAY
+
+7) Read integer value and display the number of days for this month.
+
+package month;
+import java.util.Scanner;
+public class Month {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String month1;
+		System.out.println("enter the month: ");
+		Scanner s1=new Scanner(System.in);
+		month1=s1.next();
+		switch(month1)
+		{
+		case "january":
+		case "march":
+		case "may":
+		case "july":
+		case "agust":
+		case "october":
+		case "december":System.out.println("31 Days");
+		      break;
+		case "april":
+		case "june":
+		case "september":
+		case "november":System.out.println("30 Days");
+		      break;
+		case "february":System.out.println("28 Days");
+		      break;
+             default:System.out.println("invalid");  
+		}
+	}
+
+}
+output:
+1)
+enter the month: 
+agust
+31 Days
+2)
+enter the month: 
+april
+30 Days
+3)
+enter the month: 
+february
+28 Days
+4)
+enter the month: 
+fghj
+invalid
+
+
+
