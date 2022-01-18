@@ -1,0 +1,162 @@
+
+
+1)Write a program to create a two packages employeepackage and departmentpackage and under employeepackage create classes like Employee, Maneger, Admin under departmentpackage create class by name Department and Project. Create a Main class to test the above classes.
+
+package employeepackage;        //first package
+
+	public class Employee {          //first class and function 
+		int empId;
+		String eName;
+		public void display() 
+		{
+			System.out.println("Employee Details");
+			empId=100;
+			eName="Harry";
+			System.out.println(empId+"  "+eName);
+		}
+}
+
+package employeepackage;  
+
+public class Manager {   //Second class and function
+	int Id;
+	String mName;
+	public void display1() 
+	{
+		Id=101;
+	    mName="Dany";
+	System.out.println(Id+"  "+mName);
+	}
+}
+
+package employeepackage;   
+
+public class Admin {       //third class and function
+	int Id;
+	String aName;
+	public void display2() 
+	{
+		Id=102;
+		aName="Jhon";
+	System.out.println(Id+"  "+aName);
+	}
+}
+
+package departmentpackage;  //second package
+
+public class Project {  //first class and function
+	 String pName;
+	 public void print1()
+	 {
+		 System.out.println("Department Details");
+		 pName="Fish Management System";
+		 System.out.println("name is: "+pName);
+	 }
+
+}
+
+package departmentpackage;
+
+public class Department {     //second class and function
+ String dName;
+ public void print2()
+ {
+		dName="HR";
+	 System.out.println("department name is: "+dName);
+ }
+}
+
+package main; //main class
+import employeepackage.Employee;
+import employeepackage.Manager     
+import employeepackage.Admin;      //importing all packages with it’s respective classes
+import departmentpackage.Department;
+import departmentpackage.Project;
+public class TestPackage {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//creating objects 
+Employee emp=new Employee();
+Manager emp1=new Manager();
+Admin emp2=new Admin();
+Project emp3=new Project();
+Department emp4=new Department();
+//calling all the methods using objects
+emp.display();
+emp1.display1();
+emp2.display2();
+emp3.print1();
+emp4.print2();
+	}
+}
+output
+Employee Details
+100  Harry
+101  Dany
+102  Jhon
+Department Details
+name is: Fish Management System
+department name is: HR
+
+2)Write a program to check how many Shape objects created.
+
+public class Test {       //Main class
+	int a=12;
+	int b=7;
+	static int count;    //static variable
+	static               //static block
+	{
+		count=0;
+	}
+     //methods
+	public int add()
+	{
+		count++;
+		int c=a+b;
+		return c;
+		
+	}
+	public int sub()
+	{
+		count++;
+		int c=a-b;
+		return c;
+		
+	}
+	public int mul()
+	{
+		count++;
+		int c=a*b;
+		return c;
+		
+	}
+	
+	 public static int countObj()
+	{
+		return count;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+             //creating objects and calling above methods
+		Test t1=new Test();
+		Test t2=new Test();
+		Test t3=new Test();
+		System.out.println("The Addition is= "+t1.add());
+		System.out.println("The Difference is= "+t1.sub());
+		System.out.println("The Multiplication is= "+t1.add());
+            //Calling static method using class name
+		int cnt=Test.countObj();
+		System.out.println("The number of object created is: "+cnt);
+	}
+
+}
+output
+The Addition is= 19
+The Difference is= 5
+The Multiplication is= 19
+The number of object created is: 3
+
+
+
