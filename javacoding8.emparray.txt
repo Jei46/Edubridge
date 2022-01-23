@@ -1,0 +1,141 @@
+1.package emptest;
+
+import java.util.Scanner;
+
+public class Employee {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Welcome to employee administration");
+		char ch;
+		do
+		{
+		System.out.println("1: Add employee");
+		System.out.println("2:display all employees ");
+		System.out.println("3:display all employees based on id ");
+		System.out.println("4:display all employees based on name ");
+		System.out.println("Enter the option to perform a task");
+		Scanner sn=new Scanner(System.in);
+		int option=sn.nextInt();
+		switch(option)
+		{
+		case 1 :ETest emp=new ETest();
+				System.out.println("Enter the employee id,name,salary");
+				int empid=sn.nextInt();
+				String ename=sn.next();
+				int salary=sn.nextInt();
+				emp.setEmpid(empid);
+				emp.setEname(ename);
+				emp.setSalary(salary);
+				Memploee.AddEmployee(emp);
+				break;
+		case 2:Memploee.display();
+		break;
+		case 3:System.out.println("Enter the employee id");
+				int empid1=sn.nextInt();
+				int pos=Memploee.findEmp_onid(empid1);
+				if(pos>=0)
+				{
+					System.out.println("found");
+				}
+				else
+				{
+					System.out.println("not found");
+				}
+		break;
+		case 4:System.out.println("Enter the employee name");
+				String empname1=sn.next();
+				ETest emp1=Memploee.findEmp_onname(empname1);
+				if(emp1!=null)
+				{
+					System.out.println("found"+emp1);
+				}
+				else
+				{
+					System.out.println("not found");
+				}
+				break;
+	    default:System.out.println("enter the valid options");
+		}
+		System.out.println("Do you want to continue then press y/n ?");
+		ch=sn.next().charAt(0);		
+		}while(ch=='y'||ch=='Y');
+	}
+	
+
+}
+********************************************************************************
+2.package emptest;
+
+public class ETest {
+private int empid;
+private String ename;
+private int salary;
+public int getEmpid() {
+	return empid;
+}
+public void setEmpid(int empid) {
+	this.empid = empid;
+}
+public String getEname() {
+	return ename;
+}
+public void setEname(String ename) {
+	this.ename = ename;
+}
+public int getSalary() {
+	return salary;
+}
+public void setSalary(int salary) {
+	this.salary = salary;
+}
+@Override
+public String toString() {
+	return "ETest [empid=" + empid + ", ename=" + ename + ", salary=" + salary + "]";
+}
+
+}
+********************************************************************************
+3.package emptest;
+
+public class Memploee {
+		static ETest[] array=new ETest[50];
+		static int count=0;
+		public static void AddEmployee(ETest employee) {
+			// TODO Auto-generated method stub
+			array[count]=employee;
+			count++;
+		}
+		public static void display() 
+		{
+		for(int i=0;i<count;i++)	
+		{
+			System.out.println(array[i]);
+		}
+	}
+		public static int findEmp_onid(int empid1) {
+			// TODO Auto-generated method stub
+			for(int i=0;i<count;i++)	
+			{
+				if(array[i].getEmpid()==empid1)
+				{
+				 return i;
+				}
+				
+			}
+		return -1;
+		}
+		public static ETest findEmp_onname(String empname1) {
+			for(int i=0;i<count;i++)	
+			{
+				if(array[i].getEname().equals(empname1))
+				{
+				 return array[i];
+				}
+				
+			}
+			return null;
+		}
+		
+}
+********************************************************************************
