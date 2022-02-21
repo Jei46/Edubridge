@@ -1,0 +1,234 @@
+
+1) Creat a base class Employee with member variable salary.and inherit all the properties of base class in child class programmer which has variables bonus and totalSalary and calculate totalSalary. And access it in main class.
+********************************************************************************
+package inheritance1;
+public class Employee {
+	int salary;
+	public Employee(int salary) {
+		super();
+		this.salary = salary;
+	}
+	@Override
+	public String toString() {
+		return "Employee [salary=" + salary + "]";
+	}
+}
+********************************************************************************
+package inheritance1;
+public class Programmer extends Employee {
+	int bonus;
+    double totalSalary;
+  public Programmer(int salary,int bonus) {
+	    super(salary);
+		this.bonus=bonus;
+		totalSalary=(salary+bonus);
+	}
+@Override
+public String toString() {
+	return super.toString()+"Programmer [bonus=" + bonus + ", totalSalary=" + totalSalary + "]";
+}
+}
+********************************************************************************
+package inheritance1;
+public class Testing {
+	public static void main(String[] args) {
+		Programmer p=new Programmer(10000,3500);
+		System.out.println(p);
+	}
+}
+********************************************************************************
+output:
+Employee [salary=10000]Programmer [bonus=3500, totalSalary=13500.0]
+********************************************************************************
+2)Creat a base class Bicycle with member variables gear,speed and use a method applyBrake(int value) and speedUp(int value) as giving values to variable value speed should reduse in applyBrake method and speed should increase in speedUp method. And create a derived class MountainBike and use a seatHight() method to adjust seat hight and inherit all the properties off base class.and access it in main class.
+************************************************************************
+package inheritance2;
+public class Bicycle {
+int gear,speed;
+public Bicycle(int gear, int speed) {
+	super();
+	this.gear = gear;
+	this.speed = speed;
+}
+public int applyBrake(int value) {
+	return speed=speed-value;	
+}
+public int speedUp(int value) {
+	return speed=speed+value;
+}
+@Override
+public String toString() {
+	return "Bicycle [gear=" + gear + ", speed=" + speed + "]";
+}
+}
+********************************************************************************
+package inheritance2;
+public class MountainBike extends Bicycle{
+	public MountainBike(int gear, int speed) {
+		super(gear, speed);
+		// TODO Auto-generated constructor stub
+	}
+	public int seatHight(int hight) {
+		return hight;
+	}
+	@Override
+	public String toString() {
+		return super.toString()+"MountainBike []";
+	}
+}
+********************************************************************************
+package inheritance2;
+public class Test {
+	public static void main(String[] args) {
+	//	Bicycle b=new Bicycle(4,80);
+	//	System.out.println(b);
+    //    System.out.println("bike spead when break is applied: "+b.applyBrake(20));
+   //     System.out.println("bike spead when spead is increased: "+b.speedUp(40));
+		MountainBike m=new MountainBike(4,80);
+        System.out.println(m);
+        System.out.println("Current Seat hight: "+m.seatHight(10));
+        System.out.println("bike spead when break is applied: "+m.applyBrake(20));
+        System.out.println("bike spead when spead is increased: "+m.speedUp(40));
+	}
+}
+********************************************************************************
+output:
+Bicycle [gear=4, speed=80]MountainBike []
+Current Seat hight: 10
+bike spead when break is applied: 60
+bike spead when spead is increased: 100
+********************************************************************************
+3)HIERARCHICAL INHERITANCE
+********************************************************************************
+package inheriting;
+//Bse class
+public class Shape {
+	int id;
+	String name,colour;
+	public Shape(int id, String name, String colour) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.colour = colour;
+	}
+	@Override
+	public String toString() {
+		return "Shape [id=" + id + ", name=" + name + ", colour=" + colour + "]";
+	}
+}
+********************************************************************************
+package inheriting;
+//child class of shape and base class of Square and triangle
+public class TwoD extends Shape {
+	int length,width;
+
+	public TwoD(int id, String name, String colour) {
+		super(id, name, colour);
+		// TODO Auto-generated constructor stub
+	}
+
+	public TwoD(int id, String name, String colour, int length, int width) {
+		super(id, name, colour);
+		this.length = length;
+		this.width = width;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString()+"TwoD [length=" + length + ", width=" + width + "]";
+	}
+}
+********************************************************************************
+package inheriting;
+//child class 
+public class Square extends TwoD {
+    int area;
+	public Square(int id, String name, String colour, int length, int width) {
+		super(id, name, colour, length, width);
+		area=(length*width);
+	}
+	@Override
+	public String toString() {
+		return super.toString()+"Square [area=" + area + "]";
+	}
+}
+********************************************************************************
+package inheriting;
+//child class
+public class triangle extends TwoD {
+double area;
+	public triangle(int id, String name, String colour, int length, int width) {
+		super(id, name, colour, length, width);
+		area=(0.5*length*width);
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return super.toString()+"triangle [area=" + area + "]";
+	}
+}
+********************************************************************************
+package inheriting;
+//child class of shape and base class of pentagon and Hexagon
+public class ThreeD extends Shape {
+	int length,width,hight;
+
+	public ThreeD(int id, String name, String colour) {
+		super(id, name, colour);
+		// TODO Auto-generated constructor stub
+	}
+
+	public ThreeD(int id, String name, String colour, int length, int width, int hight) {
+		super(id, name, colour);
+		this.length = length;
+		this.width = width;
+		this.hight = hight;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString()+"ThreeD [length=" + length + ", width=" + width + ", hight=" + hight + "]";
+	}
+}
+********************************************************************************
+package inheriting;
+//child class 
+public class pentagon extends ThreeD{
+
+	public pentagon(int id, String name, String colour, int length, int width, int hight) {
+		super(id, name, colour, length, width, hight);
+	}
+}
+********************************************************************************
+package inheriting;
+//child class 
+public class Hexagon extends ThreeD {
+
+	public Hexagon(int id, String name, String colour, int length, int width, int hight) {
+		super(id, name, colour, length, width, hight);
+	}
+
+}
+********************************************************************************
+package inheriting;
+//Main class 
+public class Test {
+
+	public static void main(String[] args) {
+    Square s=new Square(101,"sam","black",23,10);
+    System.out.println(s);
+    triangle a=new triangle(102,"jhon","white",15,18);
+    System.out.println(a);
+    pentagon b=new pentagon(103,"harry","yellow",7,26,30);
+    System.out.println(b);
+    Hexagon c=new Hexagon(104,"dany","red",7,10,45);
+    System.out.println(c);
+	}
+}
+********************************************************************************
+output:
+Shape [id=101, name=sam, colour=black]TwoD [length=23, width=10]Square [area=230]
+Shape [id=102, name=jhon, colour=white]TwoD [length=15, width=18]triangle [area=135.0]
+Shape [id=103, name=harry, colour=yellow]ThreeD [length=7, width=26, hight=30]
+Shape [id=104, name=dany, colour=red]ThreeD [length=7, width=10, hight=45]
+********************************************************************************

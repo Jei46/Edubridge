@@ -1,0 +1,427 @@
+********************************************************************************
+1).Playing with String
+********************************************************************************
+package playingwithstring;
+
+
+import java.util.Scanner;
+
+public class PlayString {
+	public static String formString(String str,int n)
+	{
+	String[] s=str.split(" ");
+	char ch;
+	StringBuffer str1=new StringBuffer();
+	for(String sn:s)
+	{
+		if(sn.length()==n)
+		{
+		ch=sn.charAt(sn.length()-1);
+			
+		}else 
+		{
+			ch='$';
+		}
+		str1.append(ch);
+	}return str1.toString();
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Ener the String");
+		String str=sc.nextLine();
+		System.out.println("Ener the number");
+		int n=sc.nextInt();
+		PlayString p=new PlayString();
+		System.out.println(p.formString(str,n));
+		
+	}
+
+}
+output:
+Ener the String
+ABC XYZ EFG MN
+Ener the number
+3
+CZG$
+********************************************************************************
+2).Reverse Substring
+********************************************************************************
+package stringex1;
+
+import java.util.Scanner;
+
+public class ReverseString {
+	public static String reverseSubstring(String str,int index1,int length)
+	{
+		StringBuffer sb=new StringBuffer(str);
+		sb.reverse();
+		str=sb.toString();
+		return str.substring(index1, (index1+length));
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sn=new Scanner(System.in);
+		System.out.println("Enter the string");
+		String msg=sn.next();
+		System.out.println("Enter the starting index");
+		int index=sn.nextInt();
+		System.out.println("Enter the length of the selected string");
+		int len=sn.nextInt();
+		msg.length();
+		ReverseString a=new ReverseString();
+		System.out.println(a.reverseSubstring(msg, index, len));
+	}
+
+}
+output:
+Enter the string
+rajasthan
+Enter the starting index
+2
+Enter the length of the selected string
+3
+hts
+********************************************************************************
+3).Fetching midle Charecters from the String
+********************************************************************************
+package stringex2;
+
+import java.util.Scanner;
+
+public class Midle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sn=new Scanner(System.in);
+		char ch;
+		do
+		{
+		System.out.println("Enter the string of even length");
+		String msg6=sn.next();
+		if(msg6.length()%2==0)
+       {
+		int a;
+		if(msg6.length()%2==0)
+		{
+			a=(msg6.length()/2);
+			System.out.println(msg6.charAt(a-1)+""+msg6.charAt(a));
+			//System.out.println();
+		}
+       }
+		else
+		{
+			System.out.println("Plz enter the string of even length only");
+		}
+		System.out.println("do u want to continue press y");
+		ch=sn.next().charAt(0);
+	}while(ch=='y');
+	}
+}
+output:
+Enter the string of even length
+this
+hi
+********************************************************************************
+4).String Processing-Long+Short+Long
+********************************************************************************
+package stringex3;
+
+import java.util.Scanner;
+
+public class InsertString {
+	
+	public static String getCombo(String msg3,String msg4)
+	{
+		if(msg3.length()<msg4.length())
+		return msg3+""+msg4+""+msg3;
+		else
+		return msg3+""+msg4+""+msg3;	
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sn=new Scanner(System.in);
+		String msg1,msg2;
+		System.out.println("Enter the first string");
+		msg1=sn.next();
+		System.out.println("Enter the second string");
+		msg2=sn.next();
+		InsertString ob=new InsertString();
+		System.out.println(ob.getCombo(msg1, msg2));
+	}
+
+}
+output:
+Enter the first string
+Hello
+Enter the second string
+Hi
+HelloHiHello
+********************************************************************************
+5).String Processing-Replication
+********************************************************************************
+package replica;
+
+import java.util.Scanner;
+
+public class Replica {
+	public static String repeatString(String msg2,int b )
+	{
+		StringBuffer sb=new StringBuffer();
+		for(int i=1;i<=b;i++)
+		{
+			sb.append(msg2+"");
+		}
+		return sb.toString();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sn=new Scanner(System.in);
+		String msg1;
+		System.out.println("Enter the string");
+		msg1=sn.next();
+		int n=sn.nextInt();
+		Replica obj=new Replica();
+		System.out.println(obj.repeatString(msg1, n));
+	}
+
+}
+output:
+Enter the string
+Lily
+2
+LilyLily
+********************************************************************************
+6).Flush Characters
+********************************************************************************
+package flushcharector;
+
+import java.util.Scanner;
+
+public class SplChar {
+	public static String getSplChar(String msg2)
+	{
+		StringBuffer sb=new StringBuffer();
+		for(int i=0;i<msg2.length();i++)
+		{
+			char a=msg2.charAt(i);
+			if(!Character.isAlphabetic(a))
+				sb.append(a);
+		}
+		return sb.toString();
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sn=new Scanner(System.in);
+		String msg1;
+		System.out.println("Enter the string");
+		msg1=sn.next();
+		SplChar obj=new SplChar();
+		System.out.println(obj.getSplChar(msg1));
+	}
+
+}
+output:
+Enter the string
+cogniz$#45Ant
+$#45
+********************************************************************************
+7).Nagative String
+********************************************************************************
+package negaivestring;
+
+import java.util.Scanner;
+
+public class main1 {
+	public static String negativeString(String msg2)
+	{
+		StringBuffer buf1=new StringBuffer();
+		String[] str=msg2.split(" ");
+		for(String s:str)
+		{
+			if(s.equals("is"))
+			{
+				buf1.append(" ").append("is not").append(" ");
+			}
+			else
+			{
+				buf1.append(s).append(" ");
+			}
+		}
+		return buf1.toString();
+
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sn=new Scanner(System.in);
+		String msg1;
+		System.out.println("Enter the string");
+		msg1=sn.nextLine();
+		main1 obj=new main1();
+		System.out.println(obj.negativeString(msg1));
+	}
+
+}
+output:
+Enter the string
+This is just a misconseption
+This  is not just a misconseption 
+********************************************************************************8).Name Shrinking
+********************************************************************************
+package nameShrinking;
+
+import java.util.Scanner;
+
+public class DotSepearatedInitial {
+public static String getFormatedString(String msg)
+{
+	StringBuffer buff=new StringBuffer();
+	StringBuffer buff1=new StringBuffer();
+	String[] str=msg.split(" ");
+	int n=0;
+	for(String s:str)
+	{
+		if(n<2) 
+		{
+			buff.append(s.charAt(0)).append("."); n++; 
+			}
+		else 
+		{ 
+			buff1.append(s);
+		  } 
+		} 
+		buff.reverse();
+		return buff1.append(buff).toString();
+    }
+	public static void main(String[] args) {
+		Scanner sn=new Scanner(System.in);
+		String msg;
+		System.out.println("Enter the string");
+		msg=sn.nextLine();
+		System.out.println(getFormatedString(msg));
+
+	}
+
+}
+output:
+Enter the string
+Sachin Ramesh Thendulkar 
+Thendulkar.R.S 
+********************************************************************************
+9).Start Case
+********************************************************************************
+package startcase;
+
+import java.util.Scanner;
+
+public class PrintCapitalized {
+public static String printCapitalized(String msg1)
+{
+	StringBuffer buff=new StringBuffer();
+	String[] str=msg1.split(" ");
+	String a = null;
+	for( String s:str)
+	{
+		int n=s.length();
+		a=s.substring(1,n);
+		buff.append(s.substring(0,1).toUpperCase()).append(a).append(" ");
+		
+	}
+	return buff.toString();
+}
+
+	public static void main(String[] args) {
+		Scanner sn=new Scanner(System.in);
+		String msg1;
+		System.out.println("Enter the string");
+		msg1=sn.nextLine();
+		System.out.println(printCapitalized(msg1));
+
+	}
+
+}
+output:
+Enter the string
+now is the time to act!
+Now Is The Time To Act! 
+********************************************************************************
+10).Occurence Count
+********************************************************************************
+package findingword;
+
+import java.util.Scanner;
+
+import printlowercasex.lower_x;
+
+public class Occurence {
+	static int count=0;
+	public static int countWords(String msg3,String msg4)
+	{
+		String[] str=msg3.split(" ");
+		for(String s:str)
+		{
+			if(s.equals(msg4))
+			{
+				count++;
+			}
+		}
+		return count;
+	}
+	public static void main(String[] args) {
+			Scanner sn=new Scanner(System.in);
+			System.out.println("Enter the string");
+			String msg1=sn.nextLine();
+			System.out.println("Enter the word to be counted");
+			String msg2=sn.nextLine();
+			Occurence obj=new Occurence();
+			System.out.println(obj.countWords(msg1,msg2));
+		}
+
+
+	}
+output:
+Enter the string
+Hello world java is best programing language in the world
+Enter the word to be counted
+world
+2
+********************************************************************************
+11).String Processing Small 'x' at last
+********************************************************************************
+package printlowercasex;
+
+import java.util.Scanner;
+
+public class lower_x {
+	public static String moveX(String msg3)
+	{
+		StringBuffer buf1=new StringBuffer();
+		StringBuffer buf2=new StringBuffer();
+     for(int i=0;i<msg3.length();i++)
+     {
+    	 char ch=msg3.charAt(i);
+    	 if(ch=='x') {
+    		 buf1.append(ch);
+    	 }else
+    	 {
+    		 buf2.append(ch);
+    	 }
+     }
+     return buf2.append(buf1).toString();
+	}
+	public static void main(String[] args) {
+		Scanner sn=new Scanner(System.in);
+		System.out.println("Enter the string");
+		String msg1=sn.nextLine();
+		lower_x obj=new lower_x();
+		System.out.println(obj.moveX(msg1));
+	}
+
+}
+output:
+Enter the string
+XXxxtest
+XXtestxx
+********************************************************************************
+
